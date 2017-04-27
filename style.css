@@ -39,6 +39,7 @@ nav a {
 section {
     background-color: gray;
     margin: auto auto;
+    padding: 50px 20px;
 }
 
 #intro {
@@ -84,14 +85,14 @@ section {
 
 
 
-    #logo{
-        width: 30px;
-        float: right;
-        display: inline;
-    }
+#logo{
+    width: 30px;
+    float: right;
+    display: inline;
+}
 
-    .clearfix {
-        clear: both;
-    }
+.clearfix {
+    clear: both;
+}
 
 }

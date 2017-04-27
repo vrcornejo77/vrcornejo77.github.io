@@ -3,6 +3,7 @@
 	<head>
 		<title>Welcome to my Test Page</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">	
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script>
 			$(document).ready(function(){
@@ -25,7 +26,19 @@
 				})
 
 			})
-		</script>		
+
+		</script>	
+		<script src="jquery.fancybox.min.js"></script>
+
+		<script type="text/javascript">
+		$("[data-fancybox]").fancybox({
+			// Options will go here
+			speed: 500,
+
+		});
+		</script>
+
+
 	</head>
 
 	<body>
@@ -49,9 +62,29 @@
 		<p>Hello Everyone!</p>
 		<p>This is my webpage dedicated to my favorite Spaceships from some of my favorite Sci-fi series, ranging from television, comics, manga, etc.</p>
 	</section>
+
 	<br />
+
 	<section id='image_gallery'>
 		<p class = 'title'>Gallery Of Ships</p>
+
+	<a href="http://orig04.deviantart.net/f66b/f/2009/122/4/3/uss_phoenix_in_low_orbit_by_markkingsnorth.jpg" data-fancybox="gallery" data-caption="U.S.S. Phoenix">
+		<img src="http://orig04.deviantart.net/f66b/f/2009/122/4/3/uss_phoenix_in_low_orbit_by_markkingsnorth.jpg"  width=200px alt="" />
+	</a>
+
+	<a href="http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2010/10/29/nasa-cover-up-hundred-year-starship/_jcr_content/par/featured-media/media-1.img.jpg/876/493/1446689035226.jpg?ve=1&tl=1" data-fancybox="gallery" data-caption="U.S.S. Enterprize">
+		<img src="http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2010/10/29/nasa-cover-up-hundred-year-starship/_jcr_content/par/featured-media/media-1.img.jpg/876/493/1446689035226.jpg?ve=1&tl=1" width=200px alt="" />
+	</a>
+
+	<a href="http://www.fantastic-plastic.com/Prometheus-MoviePhoto.jpg" data-fancybox="gallery" data-caption="Starship Prometheus">
+		<img src="http://www.fantastic-plastic.com/Prometheus-MoviePhoto.jpg"  width=200px alt="" />
+	</a>
+
+	<a href="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg" data-fancybox="gallery" data-caption="Spacebattleship Yamato">
+		<img src="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg"  width=200px alt="" />
+	</a>
+
+
 	</section>
 
 	<br />

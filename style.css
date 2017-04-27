@@ -37,18 +37,18 @@ nav a {
 }
 
 section {
-
     background-color: gray;
-    color: white;
     margin: auto auto;
 }
 
 #intro {
- 	width: 500px;
-    height: 600px;
+ 	width: 900px;
+    height: 100px;
 }
 
-#section2 {
+#image_gallery {
+	width: 900px;
+    height: 600px;
     background: url("https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148--space-wallpaper-background-hd-wallpaper.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;

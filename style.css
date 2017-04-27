@@ -1,3 +1,11 @@
+html {
+	background: url("https://lh5.ggpht.com/w8vlt89U83TIzbDNDRdGBmFh3kS9wJthH3l8awOXRIx-CRSZ8aKtubFip8O7Mz7nABk=h900");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
 p {
 	color: red;
 	font-size: 22px;
@@ -29,19 +37,15 @@ nav a {
 }
 
 section {
-    height: 600px;
-    padding: 50px 20px;
-    background-size: cover;
-    background-attachment: fixed;
+
+    background-color: gray;
     color: white;
+    margin: auto auto;
 }
 
-#section1 {
-    background: url("https://lh5.ggpht.com/w8vlt89U83TIzbDNDRdGBmFh3kS9wJthH3l8awOXRIx-CRSZ8aKtubFip8O7Mz7nABk=h900");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+#intro {
+ 	width: 500px;
+    height: 600px;
 }
 
 #section2 {

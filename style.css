@@ -48,7 +48,7 @@ section {
 }
 
 #image_gallery {
-	width: 900px;
+	width: 100%;
     height: 600px;
     background: url("https://s-media-cache-ak0.pinimg.com/originals/e1/00/ef/e100ef3699fa021506561d41e392a148--space-wallpaper-background-hd-wallpaper.jpg");
     background-repeat: no-repeat;
@@ -57,7 +57,9 @@ section {
     background-size: cover;
 }
 
-#section3 {
+#video_gallery {
+	width: 100%;
+    height: 600px;
     background: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-8.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;

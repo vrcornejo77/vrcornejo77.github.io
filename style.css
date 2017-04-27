@@ -7,14 +7,23 @@ html {
 }
 
 p {
-	color: red;
+	color: white;
 	font-size: 22px;
 	font-family: Times;
+
+}
+
+.title{
+	background: grey;
+	color: black;
+	font-size: 28px;
+	font-family: Arial;
+	font-weight: bold;
 }
 
 nav {
     text-align: center;
-    background-color: green;
+    background-color: gray;
     position: fixed;
     top: 0;
     left: 0;
@@ -37,7 +46,7 @@ nav a {
 }
 
 section {
-    background-color: gray;
+    background-color: black;
     margin: auto auto;
     padding: 50px 20px;
     height: 600px;

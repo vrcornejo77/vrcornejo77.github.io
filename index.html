@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Welcome to my Test Page</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">	
+		<title>Legendary Starships</title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<!-- FancyBox CSS -->
+		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">	
+
+	    <!-- Bootstrap Core CSS -->
+	    <link href="css/bootstrap.min.css" rel="stylesheet">		
+
+	    <!-- Custom CSS -->
+	    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				
 				$(window).scroll(function(){
-					if($(window).scrollTop() > 300 && $("nav").css("position") != "fixed"){
+					if($(window).scrollTop() > 50 && $("nav").css("position") != "fixed"){
 						$("nav").hide(function(){
 			        	$("nav").css("position", "fixed")
 			        	$("nav").slideDown('1000')
 			        })
-					}else if($(window).scrollTop() <= 300 ){
+					}else if($(window).scrollTop() <= 50 ){
 						$("nav").css("position", "initial")
 					}
 				})
@@ -28,7 +41,9 @@
 			})
 
 		</script>	
-		<script src="jquery.fancybox.min.js"></script>
+
+		<!-- For FancyBox -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 
 		<script type="text/javascript">
 		$("[data-fancybox]").fancybox({
@@ -36,60 +51,139 @@
 			speed: 500,
 
 		});
+
+
 		</script>
 
 
 	</head>
 
-	<body>
+	<body id="backbg">
 	<header>
+		<div class='menu-icon'>
+			<img id='logo' src="burgermenu.png">
+		</div>	
 	</header>
 
 	<nav>
-		<div class='menu-icon'>
-			<img id='logo' src="burgermenu.png">
-		</div>
+
 
 		<ul>
-			<li><a href="into">HOME</a></li>
+			<li><a href="#intro">HOME</a></li>
 			<li><a href="#image_gallery">IMAGE GALLERY</a></li>
 			<li><a href="#video_gallery">VIDEO GALLERY</a></li>
 			
 		</ul>
 	</nav>
 
-	<section id='intro'>
-		<p>Hello Everyone!</p>
-		<p>This is my webpage dedicated to my favorite Spaceships from some of my favorite Sci-fi series, ranging from television, comics, manga, etc.</p>
-	</section>
+	<section>
+		<br />
+		<div class="container-fluid">
 
-	<br />
+			<section id="intro">
+				<h2>Welcome To Dry Dock</h2>
+				<p>This is Spacestation Sol.  </p>
+			</section>
+			<br />
+			
+			<section id="image_gallery"> <!--Start of Image Gallery -->
 
-	<section id='image_gallery'>
-		<p class = 'title'>Gallery Of Ships</p>
+				<h2 class="title">Lords of Space</h2>
 
-	<a href="http://orig04.deviantart.net/f66b/f/2009/122/4/3/uss_phoenix_in_low_orbit_by_markkingsnorth.jpg" data-fancybox="gallery" data-caption="U.S.S. Phoenix">
-		<img src="http://orig04.deviantart.net/f66b/f/2009/122/4/3/uss_phoenix_in_low_orbit_by_markkingsnorth.jpg"  width=200px alt="" />
-	</a>
+				<div class="row spacing"> <!--Start of Row -->
+		
+		            <div class="col-lg-2 col-md-4 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="https://fsmedia.imgix.net/d8/80/b3/40/82fc/4218/baa9/4b9c21f6ff66/a-enterprisejpg.jpeg" data-fancybox="gallery" data-caption="U.S.S Enterprise (Star Trek TOS Movies)">
+		                    <img class="img-responsive" src="https://fsmedia.imgix.net/d8/80/b3/40/82fc/4218/baa9/4b9c21f6ff66/a-enterprisejpg.jpeg" alt="" width="200px">
+		                </a>
+		            </div>
 
-	<a href="http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2010/10/29/nasa-cover-up-hundred-year-starship/_jcr_content/par/featured-media/media-1.img.jpg/876/493/1446689035226.jpg?ve=1&tl=1" data-fancybox="gallery" data-caption="U.S.S. Enterprize">
-		<img src="http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2010/10/29/nasa-cover-up-hundred-year-starship/_jcr_content/par/featured-media/media-1.img.jpg/876/493/1446689035226.jpg?ve=1&tl=1" width=200px alt="" />
-	</a>
+		            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="http://nsa37.casimages.com/img/2015/10/20//151020033205551177.jpg" data-fancybox="gallery" data-caption="U.S.S. Voyager (Star Trek Voyager)">
+		                    <img class="img-responsive" src="http://nsa37.casimages.com/img/2015/10/20//151020033205551177.jpg" alt="">
+		                </a>
+		            </div>
+		           
+		            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg" data-fancybox="gallery" data-caption="Spacebattleship Yamato">
+		                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg" alt="">
+		                </a>
+		            </div>
 
-	<a href="http://www.fantastic-plastic.com/Prometheus-MoviePhoto.jpg" data-fancybox="gallery" data-caption="Starship Prometheus">
-		<img src="http://www.fantastic-plastic.com/Prometheus-MoviePhoto.jpg"  width=200px alt="" />
-	</a>
+		            
 
-	<a href="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg" data-fancybox="gallery" data-caption="Spacebattleship Yamato">
-		<img src="https://s-media-cache-ak0.pinimg.com/originals/9c/92/ec/9c92ec82e43898f77dbd95bb0e362efb.jpg"  width=200px alt="" />
-	</a>
+		            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="https://s-media-cache-ak0.pinimg.com/originals/29/10/17/29101771ddc689f8c37e09eda685048f.jpg" data-fancybox="gallery" data-caption="Battlestar Galactica">
+		                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/29/10/17/29101771ddc689f8c37e09eda685048f.jpg" alt="">
+		                </a>
+		            </div>
+		            
+		            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="https://s-media-cache-ak0.pinimg.com/originals/03/ce/ae/03ceae7f602f3c9693c97ff3c2f4387b.jpg" data-fancybox="gallery" data-caption="The Millennium Falcon (Star Wars)">
+		                    <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/03/ce/ae/03ceae7f602f3c9693c97ff3c2f4387b.jpg" alt="">
+		                </a>
+		            </div>
 
 
-	</section>
+		            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 thumb">
+		                <a class="thumbnail" href="http://images.amcnetworks.com/bbcamerica.com/wp-content/uploads/2011/10/doctorwho_s05_e00_21_tardis__x-large.jpg" data-fancybox="gallery" data-caption="tardis (Doctor Who)">
+		                    <img class="img-responsive" src="http://images.amcnetworks.com/bbcamerica.com/wp-content/uploads/2011/10/doctorwho_s05_e00_21_tardis__x-large.jpg" alt="">
+		                </a>
+		            </div>
+				
 
-	<br />
-	<section id='video_gallery'>
-		<p class = 'title'>Starships in Action</p>
-	</section>
+				</div>	<!--End of Row -->	
+
+			</section> <!--End of Image Gallery -->
+			<br />
+
+			<section id="video_gallery">
+				<h2 class="title">Traveling Space</h2>
+
+				<div class="row spacing"> <!--Start of Row -->
+
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox="video" href="https://www.youtube.com/embed/y5z08Py0sgE">
+						 	<img class="img-responsive" src="https://i.ytimg.com/vi/y5z08Py0sgE/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=67&sigh=H7mjRfVvahWg00uD_crwtE4uKwQ" alt="U.S.S. Enterprise">
+						</a>
+					</div>
+
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox="video" href="https://www.youtube.com/embed/h9430z3P_6s">
+						 	<img class="img-responsive" src="https://i.ytimg.com/vi/9DCwnqM2-Fg/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=67&sigh=LYHomeM3aegw4aKWxrWq0vMPG4I" alt="U.S.S. Voyager">
+						</a>
+					</div>
+										
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox="video" href="https://youtu.be/qYd8dC_WDVw">
+						 	<img class="img-responsive" src="https://i.ytimg.com/vi/qYd8dC_WDVw/hqdefault.jpg?custom=true&w=246&h=138&stc=true&jpg444=true&jpgq=90&sp=68&sigh=tk-uqVRO3RRCm85yisarUEUGLUM" alt="Space Battleship Yamato">
+						</a>
+					</div>
+
+										
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox href="https://youtu.be/YliHrc12SvE">
+						 	<img class="img-responsive" src="https://i.ytimg.com/vi/sMAS7H5-TdI/hqdefault.jpg?custom=true&w=246&h=138&stc=true&jpg444=true&jpgq=90&sp=67&sigh=_gT_E4UNX7N30SSCyxsLFagrMBY" alt="Battlestar Galactica">
+						</a>
+					</div>
+
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox href="https://youtu.be/H3KDAf2Qlow">
+						 	<img class="img-responsive" src="http://arcadesushi.com/550/files/2015/05/millenium-falcon.jpg?w=720&cdnnode=1https://i.ytimg.com/vi/H3KDAf2Qlow/hqdefault.jpg?custom=true&w=246&h=138&stc=true&jpg444=true&jpgq=90&sp=68&sigh=JjRs4HxpwolSi6jDKhm_8CYk_Ms" alt="The Millennium Falcon">
+						</a>
+					</div>
+
+					<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 thumb">
+						<a data-fancybox href="https://youtu.be/6XupDBpqo00">
+						 	<img class="img-responsive" src="https://i.ytimg.com/vi/HiUO2xkZK50/hqdefault.jpg?custom=true&w=246&h=138&stc=true&jpg444=true&jpgq=90&sp=68&sigh=rvOL0HITh4Bo4fRT3hLQpIbiuF0" alt="Tardis">
+						</a>
+					</div>										
+
+				</div> <!--End of Row -->
+
+			</section>
+			<br />
+		</div>
+	<section>
 	</body>
 </html>

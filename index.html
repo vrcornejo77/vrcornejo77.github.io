@@ -25,6 +25,7 @@
 					if($(window).scrollTop() > 50 && $("nav").css("position") != "fixed"){
 						$("nav").hide(function(){
 			        	$("nav").css("position", "fixed")
+			        	$("nav").css("top", "0")
 			        	$("nav").slideDown('1000')
 			        })
 					}else if($(window).scrollTop() <= 50 ){

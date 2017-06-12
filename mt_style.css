@@ -1,0 +1,378 @@
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+header {
+  background-color: #0522fe;
+  align-items: center;
+}
+
+#MTForm {
+    background: url(http://vrcdigitalhub.com/images/MT_Background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+
+}
+
+select {
+
+    width: 300px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background-color: #0522fe;
+}
+
+body {
+  margin: 0px;
+  background-color: #0522fe;
+
+}
+
+
+h1, h2, h4, h6, br, p {
+  color: #000;
+}
+
+h1, h2 {
+   margin: auto;
+   font-size: 40px;
+   vertical-align: top;
+   text-align: center;
+}
+
+#calcTotal {
+   font: bold 16px Arial;
+   color: #000;
+}
+
+p {
+   text-align: center;
+   font: bold 16px Arial;
+   color: #000;
+}
+
+img {
+  border: 0;  
+}
+
+.input_fmt{
+   text-align: center;
+   font: bold 16px Arial;
+   color: #000;
+
+}
+
+#logo_banner{
+  align-items: center;
+}
+
+
+.div_pos {
+  width: 80%;
+  margin: auto auto;
+  text-align: center;
+}
+
+
+/*Styles for calculator section*/
+#cal_header {
+  border: 1px gray solid;
+  width: 500px;
+  margin: auto;
+  background-color: gray;
+  color: #ffffff;
+  border-radius: 15px 15px 0px 0px;
+}
+
+#cal_font_head {
+  color: #ffffff;
+  text-align: center;
+
+}
+
+#cal_font_foot {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.cal_settings{
+  width: 500px;
+  margin: auto;
+  background-color: gray;
+  border: 1px gray solid;
+}
+
+.cal_body{
+  top: 10px;
+  border: 1px gray solid;
+  width: 500px;
+  margin: auto;
+  padding: auto auto;
+  background-color: #ffffff;
+  color: #ffffff;
+  text-align: center;
+
+}
+
+#open_btn, #close_btn{
+  color: #fff;
+  font: bold 12px Arial;
+}
+
+#cal_footer {
+  border: 1px gray solid;
+  width: 500px;
+  margin: auto;
+  background-color: gray;
+  color: #ffffff;
+  border-radius: 0px 0px 15px 15px ;
+} 
+
+#finalTotal {
+   color: #ffffff;
+   font: bold 36px Arial;
+   line-height: 36px;
+ 
+}
+ 
+#radio_grid {
+  margin: auto auto;
+  font: bold 16px Arial;
+  color: #000;
+  text-align: left;
+  line-height: 16px;
+  width: 200px;
+}
+
+.helper_text {
+   font: normal 14px Arial;
+   line-height: 14px;
+   color: #2F4F4F;     
+
+}
+
+ #time_helper, #purchase_helper {
+   margin: auto auto;
+   text-align: center;
+   width: 500px;
+   
+ }
+
+ #mapScreen {
+    width: 500px;
+    margin: auto auto;
+    display: none;
+ }
+
+
+/*Settings for Navigation Section*/
+ nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+
+nav {
+    text-align: center;
+    background-color: darkgrey;
+    position: fixed;
+    top: 50;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 100;
+}
+
+nav a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.menu-icon img{
+    width: 20px;
+    margin: 5px;
+}
+
+#logo{
+    display: none;
+}
+
+#bottomFooter {
+    text-align: left;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial;  
+
+    width: 100%; 
+
+}
+
+
+/*Media Query - When the width is below the max-width of 500, this query will be envoked and certain 
+items on Fare Calculator site will be altered according to specs below*/
+
+@media (max-width: 650px){
+    nav ul li{
+      display: block;
+      text-align: left;
+    }
+
+    nav ul{
+      display: none;
+    }
+
+
+    #logo{
+        width: 30px;
+        float: right;
+        display: inline;
+    }
+
+select {
+
+    width: 250px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000;
+}
+
+#cal_header {
+  border: 1px gray solid;
+  width: 350px;
+  margin: auto;
+  background-color: gray;
+  color: #ffffff;
+  border-radius: 15px 15px 0px 0px;
+}
+
+#cal_font_head {
+  color: #ffffff;
+  text-align: center;
+
+}
+
+#cal_font_foot {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.cal_settings{
+  width: 350px;
+  margin: auto;
+  background-color: gray;
+  border: 1px gray solid;
+}
+
+.cal_body{
+  top: 10px;
+  border: 1px gray solid;
+  width: 350px;
+  margin: auto;
+  padding: auto auto;
+  background-color: #ffffff;
+  color: #ffffff;
+  text-align: center;
+
+}
+
+#open_btn, #close_btn{
+  color: #fff;
+  font: bold 12px Arial;
+}
+
+#cal_footer {
+  border: 1px gray solid;
+  width: 350px;
+  margin: auto;
+  background-color: gray;
+  color: #ffffff;
+  border-radius: 0px 0px 15px 15px ;
+} 
+
+#finalTotal {
+   color: #ffffff;
+   font: bold 36px Arial;
+   line-height: 36px;
+ 
+}
+ 
+#radio_grid {
+  margin: auto auto;
+  font: bold 16px Arial;
+  color: #000;
+  text-align: left;
+  line-height: 16px;
+  width: 200px;
+}
+
+.helper_text {
+   font: normal 14px Arial;
+   line-height: 14px;
+   color: #2F4F4F;     
+
+}
+
+ #time_helper, #purchase_helper {
+   margin: auto auto;
+   text-align: center;
+   width: 350px;
+   
+ }
+
+ #mapScreen {
+    width: 350px;
+    margin: auto auto;
+    display: none;
+ }    
+}
+

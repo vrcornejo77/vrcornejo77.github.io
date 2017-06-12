@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Mercury Transit - Fare Calculator</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="http://vrcdigitalhub.com/css/mt_style.css" rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap Core CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+
+	<!-- JQuery Libraray CDN-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			//Declaration of global variables
+			var root ='http://vrcdigitalhub.com/data/fares.json';
+			var area_choice; 
+			var times_choice;
+			var radio_choice;
+			var total_cost = 0.00;
+			var cost = 0.00;
+			var fares_choice;
+			var rides_total;
+			var flag = 0;
+
+			//Nav script that will convert the Navigation section on this page.
+			$(window).scroll(function(){
+				if($(window).scrollTop() > 50 && $("nav").css("position") != "fixed"){
+					$("nav").hide(function(){
+		        	$("nav").css("position", "fixed")
+		        	$("nav").css("top", "0")
+		        	$("nav").slideDown('50')
+		        })
+				}else if($(window).scrollTop() <= 50 ){
+					$("nav").css("position", "initial")
+				}
+			})
+
+			$(document).ready(function(){
+			  $(".menu-icon").click(function(){
+			    $("nav ul").slideToggle();
+			  })
+			})//End of Nav Script			
+
+			//Section pertaining to the form section in this page.
+			$("#MTForm").ready(function(){
+					
+				$('#times').append('<option value=""></option>');
+				$('#areas').append('<option value=""></option>');
+
+				$.get({
+					url: root,
+
+
+					success: function(response){
+							
+						//Will populate the areas' drop-down list with the appropriate properties from 
+						//the json file being accessed.
+						$.each(response.zones, function(){
+							$('#areas').append('<option value="' + this['zone'] + '">' + this['name']+ '</option>');
+						})
+
+						$('#times').append('<option value="weekday">Weekdays</option>');
+						$('#times').append('<option value="evening_weekend">Evening Weekends</option>');
+						$('#times').append('<option value="anytime">Anytime</option>');
+
+						$('#finalTotal').html('$'+ parseFloat(Number(Math.round(cost + 'e2') + 'e-2')));
+
+					},
+
+					error: function(){
+						alert("Error Occured");
+					}   								
+				})					
+			
+
+				$('#areas').click(function(){
+					 area_choice = $('#areas').val();
+					 console.log(area_choice);	
+				})
+
+				$('#times').click(function(){
+					 times_choice = $('#times').val();
+					 console.log(times_choice);	
+
+					$.get({
+						url: root,
+
+						success: function(response){
+							var desc = response.info[times_choice];
+
+							$('#time_helper').html('<p class="helper_text">'+ desc +'</p>');
+
+						},
+
+						error: function(){
+							alert("Error Occured");
+						}
+					})				 
+				})
+
+
+				$("input[type=radio]").click(function(){
+
+					radio_choice=$("input[type=radio]:checked").val();
+					console.log(radio_choice);
+
+					//if statements that will determine the appropriate value to save in the fares_choice variable.
+					//The fares_choice variable is a key item need to obtain the appropriate pricing for a certain ride.
+					if (times_choice == "weekday" && radio_choice == "advance_purchase"){
+						fares_choice = 0;
+					}
+
+					if (times_choice == "weekday" && radio_choice == "onboard_purchase"){
+						fares_choice = 1;
+					}
+					if (times_choice == "evening_weekend" && radio_choice == "advance_purchase"){
+						fares_choice = 2;
+					}	
+					if (times_choice == "evening_weekend" && radio_choice == "onboard_purchase"){
+						fares_choice = 3;
+					}					
+					if (times_choice == "anytime" && radio_choice == "advance_purchase"){
+						fares_choice = 4;
+					}
+
+					$.get({
+						url: root,
+
+						success: function(response){
+							var desc = response.info[radio_choice];
+
+							$('#purchase_helper').html('<p class="helper_text">'+ desc +'</p>');
+
+							cost = response.zones[area_choice-1].fares[fares_choice].price;
+							console.log(cost);
+							rides_total = $('#rides').val()
+							total_cost = rides_total * cost;
+							console.log(total_cost);
+							$("#finalTotal").html('$'+ total_cost.toFixed(2));
+						},
+
+						error: function(){
+							alert("Error Occured");
+						}
+					})
+				})
+
+   				//Code that handles the click event, in which the .show() attibute is invoked
+   				$('#open_btn').click(function(){
+	   					$('#mapScreen').show();
+   				})
+
+				//Code that handles the click event, in which the .hide() attibute is invoked
+				$('#close_btn').click(function(){
+	   					$('#mapScreen').hide();
+   				})
+			})
+		})
+	</script>
+</head>
+
+<body>
+<!-- Header Section -->
+<header>
+	<div id="logo_banner">
+		<center>
+			<img src="http://vrcdigitalhub.com/images/MercuryTransit_Banner.jpg" alt="MT Banner" class="img-responsive" width="900px" />
+		</center>
+	<div>
+</header>
+<!-- End of Header Section -->
+
+<!-- Navigation Section -->
+<nav>
+	<div class='menu-icon'>
+		<img id='logo' src="http://vrcdigitalhub.com/images/burgermenu.png">
+	</div>	
+	<ul>
+		<li><a href="#">HOME</a></li>
+		<li><a href="#">ABOUT US</a></li>
+		<li><a href="http://vrcdigitalhub.com/MT_FareCalc.html">FARE CALCULATOR</a></li>
+	</ul>
+</nav>
+<!-- End of Navigation Section -->
+<br />
+<!-- Form Section -->
+<form name="MTForm" id="MTForm">
+	<br />
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+		
+				<!--Start of the Calculator-->
+				<div class="div_pos">
+					<div id="cal_header">
+						<h1 id="cal_font_head">Regional Rail Fares</h1>
+					</div>
+
+					<div class="cal_body">
+						<br /><p>Where are you going?<br />
+						<select id="areas">
+						</select>
+						</p>
+						<br />
+
+						<!--Link that will open and display the Zone Map when clicked-->
+						<div class="cal_settings">
+							<a href="#" id='open_btn'>View Zone Map</a>							
+						</div> 
+
+					</div>
+					<!--Zone Map-->
+					<div id='mapScreen'>
+						<img src="http://vrcdigitalhub.com/images/zone-map.jpg" class="img-responsive">	
+
+						<!--Link that will close the Zone Map when clicked-->			
+						<div class="cal_settings">
+							<a href="#" id='close_btn'>Close Zone Map</a>							
+						</div> 
+				
+					</div>
+					<!--End of Zone Map-->
+					<div class="cal_body">
+						<br /><p>When are you riding?<br />
+						<select name="times" id="times">
+						</select>
+						</p>
+						<div id="time_helper"><p class="helper_text">Helper text that explains the Options above.</p></div><br />
+					</div>
+					<div class="cal_body">
+					<br />
+						<p>How many rides will you need?<br />
+						<input class="input_fmt" type="text" size="10" maxlength="2" value="1" name="rides" id="rides"></p>
+						<br />			
+					</div>
+					<div class="cal_body">
+						<br /><p>Where will you purchase the fare?</p>
+						<div id="radio_grid">						
+						<input class="input_fmt" type="radio" name="purchase" value="advance_purchase">Station Kiosk<br />
+						<input class="input_fmt" type="radio" name="purchase" value="onboard_purchase">Onboard<br />
+						</div>
+						<br />
+						<div id="purchase_helper"><p class="helper_text">Helper text that explains the Options above.</p></div><br />
+					</div>
+					<div id="cal_footer">
+						<br /><p id="cal_font_foot">Your fare will cost<br />
+						<div id="finalTotal"></div></p><br />
+					</div>
+				</div>
+				<!--End of the Calculator-->
+			</div>
+		</div>
+	</section>
+</form>
+<!--End of the Form Section-->
+<footer id="bottomFooter">
+	Copyright: 2017 by Victor R. Cornejo
+</footer>
+</body>
+</html>

@@ -1,10 +1,10 @@
 {
     "info": {
-        "anytime": "Valid anytime",
+        "anytime": "Valid anytime (NOTE: All Anytime rides in all zones contains 10 trips per ride and thus, the price is much higher. Anytime rides can only be purchased at the Station Kiosk.)",
         "weekday": "Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station",
         "evening_weekend": "Valid weekdays after 7:00 p.m.; all day Saturday, Sunday and major holidays. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station",
-        "advance_purchase": "Tickets available for purchase at all SEPTA offices.",
-        "onboard_purchase": "Tickets available for purchase from a train conductor aboard SEPTA regional rail trains."
+        "advance_purchase": "Tickets available for purchase at all Mercury Transit offices.",
+        "onboard_purchase": "Tickets available for purchase from a train conductor aboard Mercury Transit regional rail trains."
     },
     "zones": [{
         "name": "CCP/1",
